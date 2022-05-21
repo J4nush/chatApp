@@ -5,8 +5,8 @@
                 {{currentRoom.name}}
             </h2>
         </template>
-        <div class="py-12 grid grid-cols-6">
-            <div class="mx-auto">
+        <div class="py-12 grid md:grid-cols-6">
+            <div class="sm:col-span-6 md:col-span-1 sm:mb-2">
                 <!--class="max-w-3xl mx-auto sm:px-6 lg:px-4" -->
                     <chat-room-selection
                         v-if="currentRoom.id"
@@ -14,10 +14,10 @@
                         :currentRoom="currentRoom"
                         v-on:roomchanged="setRoom($event)"
                     />
-                <!--class="max-w-7xl mx-auto sm:px-6 lg:px-8" -->
+
             </div>
-            <div class="col-span-5">
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg mx-auto" >
+            <div class="sm:col-span-6 md:col-span-5 sm:mt-3">
+                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg mx-auto sm:mt-6" >
                     <message-container
                         :messages="messages"
                     />
