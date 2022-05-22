@@ -60,5 +60,7 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-
+    public static function getUsersToCreatePrivateRooms($user_id){
+        return User::all()->except($user_id)->toArray();
+    }
 }

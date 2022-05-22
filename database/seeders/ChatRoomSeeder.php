@@ -16,13 +16,16 @@ class ChatRoomSeeder extends Seeder
     public function run()
     {
         DB::table('chat_rooms')->insert([
-            'name'=>'General'
+            'name'=>'General',
+            'private' => 0
         ]);
         DB::table('chat_rooms')->insert([
-            'name'=>'Tech Talk'
+            'name'=>'Tech Talk',
+            'private' => 0
         ]);
         DB::table('chat_rooms')->insert([
-            'name'=>'Other'
+            'name'=>'Other',
+            'private' => 0
         ]);
     }
 }

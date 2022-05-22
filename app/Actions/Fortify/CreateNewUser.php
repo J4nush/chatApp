@@ -34,6 +34,7 @@ class CreateNewUser implements CreatesNewUsers
             'password' => Hash::make($input['password']),
         ]);
         ChatUsers::assingToDefaults($user->id);
+        ChatUsers::createPrivateRooms($user->id, $user->name);
         return $user;
     }
 }

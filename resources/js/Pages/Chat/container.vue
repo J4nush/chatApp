@@ -71,13 +71,19 @@ export default {
             axios.get('/chat/rooms').then(
                 response => {
                     this.chatRooms = response.data;
+                    this.chatRooms.forEach((value, index)=>{
+                        try {
+                            let temp = JSON.parse(value.name);
+                            value.name = temp[this.$page.props.user.id];
+                        } catch (e) {
+                        }
+                    });
                     this.setRoom(response.data[0]);
                 }).catch(error=>{console.log(error);})
         },
         getPrivilages(){
             axios.get('/chat/room/'+this.currentRoom.id+'/privilages').then(
                 response => {
-                    console.log(response);
                     this.isAdmin = response.data;
                 }).catch(error=>{console.log(error);})
         },

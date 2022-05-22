@@ -33,4 +33,28 @@ class ChatUsers extends Model
         $other->save();
         return 1;
     }
+
+    public static function createPrivateRooms($user_id, $user_name){
+        $users = User::getUsersToCreatePrivateRooms($user_id);
+        foreach ($users as $us){
+            $room = new ChatRoom();
+            $room->name = '{"'.$us['id'].'": "'.$user_name.'", "'.$user_id.'": "'.$us['name'].'"}';
+            $room->private = 1;
+            $room->save();
+            $setFirst = ChatUsers::create([
+                'chat_room_id' => $room->id,
+                'user_id' => $user_id,
+                'blocked' => 0,
+                'admin' =>0
+            ]);
+            $setFirst->save();
+            $setSecond = ChatUsers::create([
+                'chat_room_id' => $room->id,
+                'user_id' => $us['id'],
+                'blocked' => 0,
+                'admin' =>0
+            ]);
+            $setSecond->save();
+        }
+    }
 }
