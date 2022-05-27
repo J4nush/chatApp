@@ -17,7 +17,7 @@
 
             </div>
             <div class="sm:col-span-6 md:col-span-5 sm:mt-3">
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg mx-auto sm:mt-6" >
+                <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg mx-auto sm:mt-6" >
                     <message-container
                         :messages="messages"
                     />

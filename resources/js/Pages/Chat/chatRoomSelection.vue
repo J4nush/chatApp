@@ -28,7 +28,7 @@
                 >
                 </v-select>
             </div>
-            <div class="h-full overflow-scroll overflow-x-hidden mt-3 relative sm:rounded-lg">
+            <div class="h-full overflow-scroll overflow-x-hidden mt-3 relative sm:rounded-lg dark:bg-gray-800">
                 <select
                     v-model="selected"
                     @change="$emit('roomchanged', selected)"
