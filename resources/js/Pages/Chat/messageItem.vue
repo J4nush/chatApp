@@ -12,7 +12,7 @@
 
         </div>
         <div v-else class="w-100 mb-1.5">
-            <div class="md:w-2/5 sm:max-w-3/5 sm:w-fit float-left">
+            <div class="max-w-[80%] md:max-w-[50%] w-fit float-left">
                 <div class="dark:text-white" style="font-size: .9rem; ">
                 {{message.user.name }}
                 </div>
