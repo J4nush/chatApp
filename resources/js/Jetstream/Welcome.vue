@@ -10,11 +10,11 @@ import JetApplicationLogo from '@/Jetstream/ApplicationLogo.vue';
             </div>
 
             <div class="mt-8 text-2xl">
-                JJW chat jako aplikacja zaliczeniowa
+                JJChat jako aplikacja zaliczeniowa
             </div>
 
             <div class="mt-6 text-gray-500">
-                Aplikacja jest super i skromnym zdaniem stwierdzam iż gimmie 3 bo tak.
+                Prosta aplikacja-usługa umożliwiająca prostą i bezpośrednią komunikację pomiędzy osobami nastawiona na możliwość rozszerzania oraz uruchamiania w różnych środowiskach
             </div>
         </div>
 

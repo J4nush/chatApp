@@ -50,8 +50,7 @@ defineProps({
 
             </div>
             <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg text-stone-100 p-6 text-center">
-                Aplikacja stworzona z potrzeby zaliczenia przedmiotu "Programowanie w chmurze obliczeniowej". Liczymy na 3, bo 3 to boska cyfra oraz jest dzielnikiem liczby 763755.
-                Prosty chat w czasie rzeczywistym, ale jeszcze nie dokończony xDDD.
+                Prosta aplikacja-usługa umożliwiająca prostą i bezpośrednią komunikację pomiędzy osobami nastawiona na możliwość rozszerzania oraz uruchamiania w różnych środowiskach
             </div>
         </div>
 

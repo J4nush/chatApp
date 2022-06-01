@@ -47,7 +47,7 @@ const alignmentClasses = computed(() => {
 </script>
 
 <template>
-    <div class="relative">
+    <div class="relative dark:text-white">
         <div @click="open = ! open">
             <slot name="trigger" />
         </div>

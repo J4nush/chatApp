@@ -1102,9 +1102,6 @@ select {
 .mb-1 {
   margin-bottom: 0.25rem;
 }
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
 .block {
   display: block;
 }
@@ -1210,16 +1207,13 @@ select {
 .w-80 {
   width: 20rem;
 }
-.w-2\/5 {
-  width: 40%;
+.w-\[90\%\] {
+  width: 90%;
 }
 .w-fit {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-}
-.w-\[90\%\] {
-  width: 90%;
 }
 .min-w-0 {
   min-width: 0px;
@@ -1238,9 +1232,6 @@ select {
 }
 .max-w-3xl {
   max-width: 48rem;
-}
-.max-w-\[50\%\] {
-  max-width: 50%;
 }
 .max-w-\[80\%\] {
   max-width: 80%;
@@ -1639,9 +1630,6 @@ select {
 .text-right {
   text-align: right;
 }
-.align-middle {
-  vertical-align: middle;
-}
 .font-sans {
   font-family: Nunito, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
@@ -1910,10 +1898,6 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
-.hover\:bg-blue-700:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(29 78 216 / var(--tw-bg-opacity));
-}
 .hover\:bg-teal-900:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(19 78 74 / var(--tw-bg-opacity));
@@ -2077,11 +2061,6 @@ select {
     background-color: rgb(75 85 99 / var(--tw-bg-opacity));
   }
 
-  .dark\:text-gray-300 {
-    --tw-text-opacity: 1;
-    color: rgb(209 213 219 / var(--tw-text-opacity));
-  }
-
   .dark\:text-gray-200 {
     --tw-text-opacity: 1;
     color: rgb(229 231 235 / var(--tw-text-opacity));
@@ -2181,12 +2160,6 @@ select {
     width: 100%;
   }
 
-  .sm\:w-fit {
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-  }
-
   .sm\:max-w-md {
     max-width: 28rem;
   }
@@ -2205,14 +2178,6 @@ select {
 
   .sm\:max-w-2xl {
     max-width: 42rem;
-  }
-
-  .sm\:max-w-\[75\%\] {
-    max-width: 75%;
-  }
-
-  .sm\:max-w-\[50\%\] {
-    max-width: 50%;
   }
 
   .sm\:flex-1 {
@@ -2339,14 +2304,6 @@ select {
 
   .md\:w-80 {
     width: 20rem;
-  }
-
-  .md\:w-2\/5 {
-    width: 40%;
-  }
-
-  .md\:max-w-\[45\%\] {
-    max-width: 45%;
   }
 
   .md\:max-w-\[50\%\] {
