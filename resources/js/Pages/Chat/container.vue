@@ -68,7 +68,7 @@ export default {
             window.Echo.leave("chat."+room.id);
         },
         getRooms(){
-            axios.get('/chat/rooms').then(
+            axios.post(route('get.rooms'), {user_id : this.$page.props.user.id}).then(
                 response => {
                     this.chatRooms = response.data;
                     this.chatRooms.forEach((value, index)=>{
@@ -82,7 +82,13 @@ export default {
                 }).catch(error=>{console.log(error);})
         },
         getPrivilages(){
-            axios.get('/chat/room/'+this.currentRoom.id+'/privilages').then(
+            axios.post(route('get.room.privilages', this.currentRoom.id), {user_id: this.$page.props.user.id}).then(
+                response => {
+                    this.isAdmin = response.data;
+                }).catch(error=>{console.log(error);})
+        },
+        creteRoom(){
+            axios.post(route('create.new.room'), {user_id: 10 , room_name: "oportunity", chat_members: { 0 : 1,1 : 2,2 : 3, 3 :  4,4 : 5}}).then(
                 response => {
                     this.isAdmin = response.data;
                 }).catch(error=>{console.log(error);})
@@ -92,7 +98,7 @@ export default {
             this.getPrivilages();
         },
         getMessages(){
-            axios.get('/chat/rooms/'+this.currentRoom.id+'/messages')
+            axios.post(route('get.room.messages', this.currentRoom.id), {user_id: this.$page.props.user.id})
             .then(response =>{
                 this.messages = response.data;
             }).catch(error =>{console.log(error);})
@@ -106,6 +112,7 @@ export default {
     },
     created(){
         this.getRooms();
+        this.creteRoom();
     }
 }
 </script>

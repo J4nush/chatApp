@@ -29,7 +29,8 @@ export default {
             if(this.message == ' '){
                 return;
             }
-            axios.post('/chat/rooms/'+this.room.id+'/message',{
+            axios.post(route('send.new.message', this.room.id),{
+                user_id: this.$page.props.user.id,
                 message: this.message
             })
             .then(response => {
