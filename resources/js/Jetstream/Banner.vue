@@ -47,7 +47,7 @@ const message = computed(() => usePage().props.value.jetstream.flash?.banner || 
                             </svg>
                         </span>
 
-                        <p class="ml-3 font-medium text-sm text-white truncate">
+                        <p class="ml-3 font-medium text-sm truncate">
                             {{ message }}
                         </p>
                     </div>

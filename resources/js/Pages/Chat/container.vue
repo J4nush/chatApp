@@ -5,8 +5,8 @@
                 {{currentRoom.name}}
             </h2>
         </template>
-        <div class="py-12 grid md:grid-cols-6">
-            <div class="sm:col-span-6 md:col-span-1 sm:mb-2">
+        <div class="flex flex-col lg:flex-row h-[83vh]">
+            <div class="w-[97vw] lg:w-[20vw]">
                 <!--class="max-w-3xl mx-auto sm:px-6 lg:px-4" -->
                     <chat-room-selection
                         v-if="currentRoom.id"
@@ -16,8 +16,8 @@
                     />
 
             </div>
-            <div class="sm:col-span-6 md:col-span-5 sm:mt-3">
-                <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg mx-auto sm:mt-6" >
+            <div class="h-full">
+                <div class="w-[98vw] lg:w-[80vw] overflow-hidden shadow-xl sm:rounded-lg mx-auto flex flex-col h-full">
                     <message-container
                         :messages="messages"
                     />
@@ -55,7 +55,7 @@ export default {
     },
     methods:{
         connect(){
-            if(this.currentRoom.id){
+            if(this.currentRoom?.id){
                 let vm = this;
                 this.getMessages();
                 window.Echo.private("chat."+this.currentRoom.id)

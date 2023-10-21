@@ -1,70 +1,59 @@
 <template>
     <div class="">
-        <div class="flex justify-between mb-3">
-            <template v-for="(room, index) in rooms">
-                <JetButton
-                    v-if="!room.private"
-                    :key="index"
-                    :v-model="room"
-                    @click="$emit('roomchanged', room)"
-                    class="sm:rounded-lg"
-                >
-
-                    {{room.name}}
-
-                </JetButton>
-            </template>
-        </div>
-        <div class="sm:h-20 md:h-96 ">
-            <div class="w-80 d-block">
-                <v-select
+        <div class="w-full">
+            <div class="w-full pb-4">
+                <Dropdown
                     v-model="selected"
                     :options="rooms"
-                    label="name"
+                    optionLabel="name"
+                    placeholder="Select a room"
                     track-by="id"
                     @change="$emit('roomchanged', selected)"
-                    class="d-block w-60 relative sm:rounded-lg"
-                    style="background: white;"
+                    class="d-block w-full relative rounded-lg bg-slate-300"
+                    filter
+                    :pt="{
+                            panel: {class:'bg-slate-300'},
+                            header: {class:'bg-slate-300'},
+                            filterContainer: {class:'bg-slate-300'},
+                            filterInput: {class: 'rounded-2xl'}
+                    }"
                 >
-                </v-select>
+                </Dropdown>
             </div>
-            <div class="h-full overflow-scroll overflow-x-hidden mt-3 relative sm:rounded-lg dark:bg-gray-800">
-                <select
+            <div class="hidden lg:block w-full">
+                <Listbox
                     v-model="selected"
                     @change="$emit('roomchanged', selected)"
-                    class="w-full md:w-80 overflow-y-hidden overflow-x-hidden ChatSelection"
+                    class="none lg:block w-full overflow-y-hidden overflow-x-hidden ChatSelection"
                     style=""
+                    optionLabel="name"
+                    :options="rooms"
                     :size="rooms.length-2"
                     >
-                    <template v-for="(room, index) in rooms">
-                       <option
-                           v-if="room.private"
-                           :key="index"
-                           :value="room"
-                           class="sm:rounded-lg"
-                           >
 
-                                {{room.name}}
+<!--                    <template #option="slotProps">-->
+<!--                                {{slotProps.option.name}}-->
+<!--            </template>-->
 
-                   </option>
-            </template>
-
-                </select>
+                </Listbox>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import {VueSelect} from 'vue-select'
-import 'vue-select/dist/vue-select.css';
-import JetButton from '@/Jetstream/Button.vue';
+
+// import JetButton from '@/Jetstream/Button.vue';
+import Button from 'primevue/button';
+import Listbox from 'primevue/listbox';
+import Dropdown from 'primevue/dropdown';
 export default {
     name: "chatRoomSelection",
     props: ['rooms', 'currentRoom'],
     components: {
-        'v-select': VueSelect,
-        JetButton
+        Button,
+        Listbox,
+        Dropdown
     },
     data: function (){
         return {
